@@ -1,0 +1,9 @@
+<skyhook-preview [allBackends]="true">
+    <ng-template let-type let-data="item">
+        <span [ngSwitch]="type">
+             <drag-preview *ngSwitchCase="'gridDndID'" [data]="data"></drag-preview>
+        </span>
+    </ng-template>
+</skyhook-preview>
+<grid></grid>
+<drop><drop>

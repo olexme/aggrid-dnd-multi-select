@@ -1,0 +1,16 @@
+/* Add application styles & imports to this file! */
+html, body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: 100%;
+  width: 100%;
+}
+body {
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";

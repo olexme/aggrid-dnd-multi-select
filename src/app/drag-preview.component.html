@@ -1,0 +1,5 @@
+<table>
+  <tr *ngFor="let row of data">
+    <td *ngFor="let itm of row | keyvalue">{{itm.value}}</td>
+  </tr>
+</table>
