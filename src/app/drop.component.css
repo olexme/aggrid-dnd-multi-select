@@ -3,4 +3,8 @@
     height: calc(100% - 20px);
     margin: 10px;
     border: 2px solid red;
+    background-color: rgba(194, 214, 147, 0.644);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 }

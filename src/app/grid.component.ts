@@ -15,8 +15,8 @@ export class Grid {
       frameworkComponents: {[gridCellCompName]: GridCellComponent},
       columnDefs: [
          { headerName: "id", field: "id", width: 90, cellRenderer: gridCellCompName},
-         { headerName: "value", field: "value", width: 120 },
-         { headerName: "value2", field: "value2", width: 120 }
+         { headerName: "value", field: "value", width: 120, cellRenderer: gridCellCompName },
+         { headerName: "value2", field: "value2", width: 120, cellRenderer: gridCellCompName }
       ],
       rowSelection: 'multiple',
       rowData: this.createData()
@@ -28,7 +28,7 @@ export class Grid {
             rowData.push({
                 id: "id_" + i,
                 value: i,
-                value2: i + Number(Math.random().toFixed(2))
+                value2: Number(Math.random()).toFixed(2)
             });
         }
 

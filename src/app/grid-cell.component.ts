@@ -5,7 +5,7 @@ import { SkyhookDndService } from '@angular-skyhook/core';
 import { GridDndKey } from './config';
 @Component({
   selector: 'grid-cell',
-  template: `<span [dragSource]="dragSrc" [noHTML5Preview]="true">{{params.data[params.colDef.field]}}</span>`,
+  template: `<div [dragSource]="dragSrc" [noHTML5Preview]="true">{{params.data[params.colDef.field]}}</div>`,
 })
 export class GridCellComponent implements ICellRendererAngularComp, OnDestroy {
   public params: ICellRendererParams;
@@ -13,13 +13,9 @@ export class GridCellComponent implements ICellRendererAngularComp, OnDestroy {
   public agInit(params: ICellRendererParams): void {
       this.params = params;
       this.dragSrc = this.dnd.dragSource(GridDndKey, {beginDrag: () => {
-        const alreadySelected: RowNode = this.params.api.getSelectedNodes()
-                                  .find(row => row.rowIndex === this.params.rowIndex);
-        if (!alreadySelected) {
-          const rowNodeToSelect: RowNode = this.params.api.getDisplayedRowAtIndex(this.params.rowIndex);
-          if (rowNodeToSelect) {
-            this.params.api.selectNode(rowNodeToSelect, false);
-          }
+        const rowNodeToSelect: RowNode = this.params.api.getDisplayedRowAtIndex(this.params.rowIndex);
+        if (rowNodeToSelect && !rowNodeToSelect.isSelected()) {
+          rowNodeToSelect.selectThisNode(true);
         }
         return this.params.api.getSelectedNodes().map(row => row.data);
       }});
