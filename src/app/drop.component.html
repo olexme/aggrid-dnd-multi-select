@@ -1,0 +1,10 @@
+<table class="content" >
+  <tr *ngFor="let row of data">
+    <td *ngFor="let itm of row | keyvalue">{{itm.value}}</td>
+  </tr>
+</table>
+<div class="drop-frame" [dropTarget]="dropTarget"
+     [ngClass]="{'can-drop': canDrop, 'drop-is-over': isOver}" 
+     *ngIf="canDrop || isOver">
+  <div class="message">DropHere</div>
+</div>

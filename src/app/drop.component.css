@@ -3,8 +3,49 @@
     height: calc(100% - 20px);
     margin: 10px;
     border: 2px solid red;
-    background-color: rgba(194, 214, 147, 0.644);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    justify-items: start;
+    align-items: start;
+}
+
+.content {
+    display: grid;
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    z-index: 1;
+    border: 1px solid gray;
+    overflow: scroll;
+}   
+.content tr {
+      border-bottom: 1px solid gray;
+}
+.content td {
+      border-right: 1px solid gray;
+}
+.drop-frame {
+    display: grid;
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    z-index: 2;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.can-drop {
+   box-shadow: inset 0px 0px 12px 2px rgba(162, 162, 247, 0.75);
+   background-color: rgba(179, 179, 240, 0.75);
+}
+
+.drop-is-over {
+   box-shadow: inset 0px 0px 14px 2px rgba(100, 100, 241, 0.9);
+   background-color:  rgba(100, 100, 241, 0.9);
+}
+
+.message {
+  display: grid;
+  font-size: 24px;
 }
