@@ -2,6 +2,13 @@
   "name": "angular",
   "version": "0.0.0",
   "private": true,
+  "keywords": [
+    "Angular",
+    "drag and drop",
+    "SkyHook",
+    "SkyHook preview",
+    "AgGrid"
+  ],
   "dependencies": {
     "@angular-skyhook/core": "1.1.1",
     "@angular-skyhook/multi-backend": "1.1.1",
